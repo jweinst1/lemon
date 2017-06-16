@@ -1,18 +1,11 @@
 //c++ unordered maps
 
 #include <iostream>
-#include <unordered_map>
-#include <string>
+#include "lambda.h"
 
 int main(){
-    std::unordered_map<std::string, int> dict;
-    dict["foo"] = 3;
-    dict["hoo"] = 4;
-  for (auto& x: dict) {
-    std::cout << x.first << ": " << x.second << std::endl;
-  }
+    lambda::Add g(3);
+    std::cout << g(8) << std::endl;
     return 0;
 }
 
-/*hoo: 4
-foo: 3*/
