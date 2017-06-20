@@ -1,6 +1,7 @@
 #include <utility>
 #include <unordered_map>
 #include <string>
+#include <vector>
 
 #ifndef LEMON_H
 #define LEMON_H
@@ -44,6 +45,26 @@ template<class T> class Lemon {
             if(other.contains(pair.first)) return false;
         }
         return true;
+    }
+    
+    T& at(const std::string& key){
+        return items.at(key);
+    }
+    //copies the current lemon
+    Lemon<T> copy(){
+        Lemon<T> newCopy;
+        for(auto& pair : items){
+            newCopy.set(pair.first, pair.second);
+        }
+        return newCopy;
+    }
+    
+    Lemon<T> construct(const std::vector<T>& values){
+        Lemon<T> newCopy = copy();
+        for(std::vector<T>::const_iterator it = values.begin();it != values.end();++it){
+            
+        }
+        
     }
 };
 
